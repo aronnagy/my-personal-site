@@ -1,0 +1,57 @@
+:root {
+    --background: rgb(255, 255, 255);
+    --navbar-background: rgb(223, 223, 223);
+    --text-color: rgb(0, 0, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: rgb(0, 0, 0);
+        --navbar-background: rgb(27, 27, 27);
+        --text-color:  rgb(255, 255, 255);
+    }
+}
+
+body {
+    background: var(--background);
+}
+
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+* {box-sizing: border-box}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: var(--navbar-background);
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.navbar a.active {
+  background-color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
