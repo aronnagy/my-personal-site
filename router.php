@@ -1,8 +1,6 @@
 <?php
 $request = $_SERVER['REQUEST_URI'];
 
-$path = '/aronnagy/?site=';
-
 switch ($request) {
     case '/aronnagy/?site=main':
         require __DIR__ . '/sites/main.php';

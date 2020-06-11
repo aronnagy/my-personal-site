@@ -1,5 +1,7 @@
-<?php require('modules/header.php') ?>
+<?php 
 
-<?php require('modules/navbar.php') ?>
+require('modules/header.php');
 
-<?php require('modules/footer.php') ?>
+require('modules/navbar.php');
+
+require('modules/footer.php');

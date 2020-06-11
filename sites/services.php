@@ -1,4 +1,9 @@
-<?php include('modules/header.php'); ?>
+<?php
+
+include('modules/header.php');
+require_once('modules/navbar.php');
+
+?>
 
 <h1>Services</h1>
 
