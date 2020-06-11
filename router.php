@@ -1,17 +1,16 @@
 <?php
-$request = $_SERVER['REQUEST_URI'];
 
-switch ($request) {
-    case '/aronnagy/?site=main':
+switch (htmlspecialchars($_GET['site'])) {
+    case '':
         require __DIR__ . '/sites/main.php';
         break;
-    case '/aronnagy/?site=projects':
+    case 'projects':
         require __DIR__ . '/sites/projects.php';
         break;
-    case '/aronnagy/?site=about':
+    case 'about':
         require __DIR__ . '/sites/about.php';
         break;
-    case '/aronnagy/?site=services':
+    case 'services':
         require __DIR__ . '/sites/services.php';
         break;
     default:

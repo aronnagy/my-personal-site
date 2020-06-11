@@ -5,6 +5,6 @@ require_once('modules/navbar.php');
 
 ?>
 
-<h1>Services</h1>
+<h1>Projects</h1>
 
 <?php include('modules/footer.php');

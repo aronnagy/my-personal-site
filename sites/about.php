@@ -4,7 +4,8 @@ include('modules/header.php');
 require_once('modules/navbar.php');
 require_once('functions/loadLanguageModule.php');
 
-$lang = 'hungarian';
+if(isset($_GET["lang"])) $lang = htmlspecialchars($_GET["lang"]);
+else $lang = 'english';
 
 ?>
 <div class="center">
