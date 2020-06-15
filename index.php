@@ -1,4 +1,5 @@
 <?php
 
-require_once('db/config.php');
-require_once('router.php');
+require 'core/Router.php';
+
+$router = new Router(require 'routes.php');
