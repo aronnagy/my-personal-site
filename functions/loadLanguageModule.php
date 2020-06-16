@@ -15,9 +15,9 @@
 
 function loadLanguageModule($language, $module_name)
 {
-    $pdo =require('core/db/Connection.php');
+    $conn = new Connection();
     try{
-        $stmt = $pdo->query("SELECT text 
+        $stmt = $conn->connect()->query("SELECT text 
                         FROM {$language}
                         INNER JOIN modules
                         ON {$language}.module_id = modules.module_id 
@@ -26,7 +26,6 @@ function loadLanguageModule($language, $module_name)
                         FROM modules
                         WHERE modules.module_name='{$module_name}');
                         ;");
-        $modules_stmt = $pdo->query("SELECT module_name FROM modules;");
     } catch(PDOException $e)
     {
         print "The following error occured during query: " . $e->getMessage();
@@ -35,7 +34,6 @@ function loadLanguageModule($language, $module_name)
     try
     {
         $query = $stmt->fetch();
-        $module_query = $modules_stmt->fetchAll(\PDO::FETCH_ASSOC);
     } catch(PDOException $e)
     {
         print "The following error occured during fetch: " . $e->getMessage();
