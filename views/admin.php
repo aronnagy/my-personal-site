@@ -1,8 +1,13 @@
 <?php
 
-$sites = require('core/db/Connection.php');
+require('functions/getSites.php');
+require('functions/getModules.php');
 
-foreach($sites as $site)
+foreach(getSites() as $site)
 {
-    echo $site . "\n";
+    echo $site . "contains: <br>";
+    foreach(getModules($site) as $module)
+    {
+        echo "-" . $module[0] . "<br>";
+    }
 }
