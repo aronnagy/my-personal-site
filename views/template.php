@@ -4,6 +4,7 @@
 require 'functions/loadLanguageModule.php';
 require 'functions/createNewBlogEntry.php';
 
+require 'views/partials/languageSelect.php';
 require 'views/partials/about/head.php';
 
 $lang = 'english';

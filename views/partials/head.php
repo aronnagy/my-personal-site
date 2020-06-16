@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="public/css/sidenav.css">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/table.css">
 </head>
 
 <body>

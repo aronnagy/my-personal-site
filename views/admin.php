@@ -1,8 +1,5 @@
 <style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+    
 </style>
 
 <?php
@@ -23,6 +20,12 @@ foreach (getSites() as $site) {
 require('functions/getSites.php');
 require('functions/getModules.php');
 require('functions/getEntries.php');
+require('views/partials/languageSelect.php');
+
+if($_GET['lang'] == null)
+{
+    $lang = 'english';
+} else $lang = $_GET['lang'];
 
 ?>
 
@@ -30,7 +33,7 @@ require('functions/getEntries.php');
     <table>
     <?=$site?>
     <?php foreach (getModules($site) as $module): ?>
-    <?php foreach(getEntries('english',$module[0]) as $entry): ?>
+    <?php foreach(getEntries($lang,$module[0]) as $entry): ?>
     <tr>
         <th><?=$module[0]?></th>
         <th>

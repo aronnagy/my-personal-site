@@ -17,15 +17,16 @@ function loadLanguageModule($language, $module_name)
 {
     $conn = new Connection();
     try{
-        $stmt = $conn->connect()->query("SELECT text 
-                        FROM {$language}
-                        INNER JOIN modules
-                        ON {$language}.module_id = modules.module_id 
-                        WHERE modules.module_id=
-                        (SELECT modules.module_id
-                        FROM modules
-                        WHERE modules.module_name='{$module_name}');
-                        ;");
+        $stmt = $conn->connect()->query(
+            "SELECT text 
+            FROM {$language}
+            INNER JOIN modules
+            ON {$language}.module_id = modules.module_id 
+            WHERE modules.module_id=
+            (SELECT modules.module_id
+            FROM modules
+            WHERE modules.module_name='{$module_name}');
+            ;");
     } catch(PDOException $e)
     {
         print "The following error occured during query: " . $e->getMessage();
