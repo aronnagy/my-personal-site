@@ -13,8 +13,9 @@
  * 
  */
 
-function loadLanguageModule($language, $module_name, $pdo)
+function loadLanguageModule($language, $module_name)
 {
+    $pdo =require('core/db/Connection.php');
     try{
         $stmt = $pdo->query("SELECT text 
                         FROM {$language}

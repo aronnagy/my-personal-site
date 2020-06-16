@@ -10,3 +10,8 @@
         font-size: 18px;
     }
 }
+
+div.left {
+    text-align: left;
+    text-indent: 25%;
+}

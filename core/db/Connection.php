@@ -3,7 +3,7 @@
 $config = (require 'config.php')['database'];
 
 try {
-    $db = new PDO(
+    return new PDO(
         $config['connection'] . ';dbname=' . $config['name'],
         $config['username'],
         $config['password']
